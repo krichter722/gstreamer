@@ -1,0 +1,5 @@
+language: c
+before_script:
+ - sudo apt-get build-dep --yes libgstreamer1.0-dev
+ - wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz && tar xf autoconf-2.69.tar.xz && cd autoconf-2.69.tar && ./configure && make -j16 && sudo make install && cd ..
+script: ./autogen.sh && make -j16 && make -j16 check && sudo make install
